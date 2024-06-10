@@ -9,7 +9,7 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.html">
           <span>
-            Prime
+            Foodistaan
           </span>
         </a>
 
@@ -35,6 +35,29 @@ xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
           <span sec:authorize="isAuthenticated()">
             <li class="nav-item">
               <a class="nav-link" href="/profile">Profile</a>
+            </li>
+          </span>
+     
+          <span sec:authorize="hasRole('ROLE_ADMIN')">
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">admin</a>
+            </li>
+          </span>
+          <span sec:authorize="hasAuthority('ACCESS_ADMIN_PANEL')">
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">admin</a>
+            </li>
+          </span>
+
+          <span sec:authorize="hasAnyRole('ROLE_ADMIN','ROLE_EDITOR' )">
+            <li class="nav-item">
+              <a class="nav-link" href="/editor">editor</a>
+            </li>
+          </span>
+
+          <span sec:authorize="isAuthenticated()">
+            <li class="nav-item">
+              <a class="nav-link" href="/logout">logout</a>
             </li>
           </span>
           </ul> 
