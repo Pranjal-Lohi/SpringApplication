@@ -1,10 +1,12 @@
 package com.pranjal.SpringApplication.controller;
 
 import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+
 import com.pranjal.SpringApplication.models.Post;
 import com.pranjal.SpringApplication.services.PostService;
 
@@ -22,5 +24,8 @@ public class HomeController {
         return "home";
     }
   
-    
+    @GetMapping("/editor")
+    public String editor(Model model){
+        return "editor";
+    }
 }

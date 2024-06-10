@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <body>
   <!-- footer section -->
   <footer class="footer_section">
@@ -12,7 +13,53 @@
             </h4>
             <div class="contact_link_box">
               <a href="">
-                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <i class="fa fa-en<!DOCTYPE html>
+                  <html  lang="en"
+                  xmlns:th="http://www.thymeleaf.org"
+                  xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+                  
+                   <!-- header section strats -->
+                   <header class="header_section">
+                      <div class="container">
+                        <nav class="navbar navbar-expand-lg custom_nav-container ">
+                          <a class="navbar-brand" href="index.html">
+                            <span>
+                              Prime
+                            </span>
+                          </a>
+                  
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class=""> </span>
+                          </button>
+                  
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav  mx-auto ">
+                              <li class="nav-item ">
+                                <a class="nav-link" href="/">Home </a>
+                              </li>
+                              <span sec:authorize="!isAuthenticated()">
+                              <li class="nav-item">
+                                <a class="nav-link" href="/register">Register</a>
+                              </li>
+                              </span>
+                              <span sec:authorize="!isAuthenticated()">
+                              <li class="nav-item">
+                                <a class="nav-link" href="/login">login</a>
+                              </li>
+                            </span>
+                            <span sec:authorize="isAuthenticated()">
+                              <li class="nav-item">
+                                <a class="nav-link" href="/profile">Profile</a>
+                              </li>
+                            </span>
+                            </ul> 
+                          </div>
+                        </nav>
+                      </div>
+                    </header>
+                    <!-- end header section -->
+                  
+                  </html>velope" aria-hidden="true"></i>
                 <span>
                   admin@foodistaan.org
                 </span>
@@ -68,7 +115,7 @@
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
   </script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
+  <script th:src="@{js/bootstrap.js}"></script>
   <!-- owl slider -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
@@ -77,7 +124,7 @@
   <!-- nice select -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
   <!-- custom js -->
-  <script src="js/custom.js"></script>
+  <script th:src="@{js/custom.js}"></script>
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap">
   </script>
