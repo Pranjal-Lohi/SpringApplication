@@ -4,12 +4,17 @@ import java.security.Principal;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
+import com.pranjal.SpringApplication.models.Account;
 import com.pranjal.SpringApplication.models.Post;
+import com.pranjal.SpringApplication.services.AccountService;
 import com.pranjal.SpringApplication.services.PostService;
 
 @Controller
@@ -18,7 +23,11 @@ public class PostController {
     @Autowired
     private PostService postService;
 
-    @GetMapping("/post/{id}")
+    @Autowired
+    private AccountService accountService;
+
+
+    @GetMapping("/posts/{id}")
     public String getPost(@PathVariable Long id, Model model, Principal principal) {
         Optional<Post> optionalPost = postService.getById(id);
         String authUser = "email";
@@ -27,7 +36,7 @@ public class PostController {
             model.addAttribute("post", post);
 
             //get username of current logged in session user
-            // String authUsername = SecurityContextHolder.getContext().getAuthentication().getName();
+            //String authUsername = SecurityContextHolder.getContext().getAuthentication().getName();
 
             if (principal != null) {
                 authUser = principal.getName();
@@ -44,4 +53,74 @@ public class PostController {
         }
     }
 
+    @GetMapping("/posts/add")
+    @PreAuthorize("isAuthenticated()")
+    public String addPost(Model model, Principal principal) {
+        String authUser = "email";
+        if(principal != null){
+            authUser = principal.getName();
+        }
+        Optional<Account> optionalAccount = accountService.findOneByEmail(authUser);
+        if(optionalAccount.isPresent()){
+            Post post = new Post();
+            post.setAccount(optionalAccount.get());
+            model.addAttribute("post", post);
+            return "post_views/post_add";
+        }else{
+            return "redirect:/";
+        }
+    }
+    
+    @PostMapping("/posts/add")
+    @PreAuthorize("isAuthenticated()")
+    public String addPostHandler(@ModelAttribute Post post, Principal principal){
+        String authUser = "email";
+        if(principal != null){
+            authUser = principal.getName();
+        }
+        if (post.getAccount().getEmail().compareToIgnoreCase(authUser) < 0){
+            return "redirect:/?error";
+        }
+        postService.save(post);
+        return "redirect:/posts/"+post.getId();
+    }
+
+    
+    @GetMapping("/posts/{id}/edit")
+    @PreAuthorize("isAuthenticated()")
+    public String getPostForEdit(@PathVariable Long id, Model model){
+        Optional<Post> optionaPost = postService.getById(id);
+        if(optionaPost.isPresent()){
+            Post post = optionaPost.get();
+            model.addAttribute("post", post);
+            return "post_views/post_edit";
+        }else{
+            return "404";
+        }
+    }
+    @PostMapping("/posts/{id}/edit")
+    @PreAuthorize("isAuthenticated()")
+    public String updatePost(@PathVariable Long id, @ModelAttribute Post post){
+        Optional<Post> optionalPost = postService.getById(id);
+        if(optionalPost.isPresent()){
+            Post existingPost = optionalPost.get();
+            existingPost.setTitle(post.getTitle());
+            existingPost.setBody(post.getBody());
+            postService.save(existingPost);
+        }
+        return "redirect:/posts/"+post.getId();
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
