@@ -55,10 +55,7 @@ public class WebSecurityConfig {
             )
             .httpBasic(withDefaults -> {})
             .csrf(csrf -> csrf.disable())
-            .headers(headers -> {
-                headers.frameOptions(frameOptions -> frameOptions.sameOrigin());
-                headers.frameOptions(frameOptions -> frameOptions.disable());
-            });
+            .headers(headers -> headers.frameOptions(frameOptions -> frameOptions.sameOrigin()));
 
         return http.build();
     }
