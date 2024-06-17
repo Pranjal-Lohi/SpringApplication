@@ -10,4 +10,7 @@ import com.pranjal.SpringApplication.models.Account;
 @Repository
 public interface AccountRepository extends JpaRepository<Account, Long>{
     Optional<Account> findOneByEmailIgnoreCase(String email);
+
+    Optional<Account> findByToken(String token);
+
 }

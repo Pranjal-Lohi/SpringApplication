@@ -22,7 +22,7 @@ import com.pranjal.SpringApplication.repositories.AccountRepository;
 import com.pranjal.SpringApplication.util.constants.Roles;
 
 @Service
-public class AccountService implements UserDetailsService{
+public class AccountService implements UserDetailsService {
 
     @Value("${spring.mvc.static-path-pattern}")
     private String photo_prefix;
@@ -33,45 +33,48 @@ public class AccountService implements UserDetailsService{
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public Account save(Account account){
+    public Account save(Account account) {
         account.setPassword(passwordEncoder.encode(account.getPassword()));
-        if (account.getRole() == null){
+        if (account.getRole() == null) {
             account.setRole(Roles.USER.getRole());
         }
-        if (account.getPhoto() == null){
+        if (account.getPhoto() == null) {
             String path = photo_prefix.replace("**", "images/person.png");
             account.setPhoto(path);
         }
-        
-        return accountRepository.save(account);    
+
+        return accountRepository.save(account);
     }
 
     @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         Optional<Account> optionalAccount = accountRepository.findOneByEmailIgnoreCase(email);
-        if(!optionalAccount.isPresent()){
+        if (!optionalAccount.isPresent()) {
             throw new UsernameNotFoundException("Account not found");
         }
         Account account = optionalAccount.get();
-        
+
         List<GrantedAuthority> grantedAuthority = new ArrayList<>();
         grantedAuthority.add(new SimpleGrantedAuthority(account.getRole()));
 
-        Set<Authority> authorities =  account.getAuthorities();
-        for(Authority _auth: authorities){
+        Set<Authority> authorities = account.getAuthorities();
+        for (Authority _auth : authorities) {
             grantedAuthority.add(new SimpleGrantedAuthority(_auth.getName()));
         }
 
         return new User(account.getEmail(), account.getPassword(), grantedAuthority);
     }
 
-    public Optional<Account> findOneByEmail(String email){
+    public Optional<Account> findOneByEmail(String email) {
         return accountRepository.findOneByEmailIgnoreCase(email);
     }
 
-    public Optional<Account> findById(Long id) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+    public Optional<Account> findById(long id) {
+        return accountRepository.findById(id);
     }
-    
+
+    public Optional<Account> findByToken(String token) {
+        return accountRepository.findByToken(token);
+    }
+
 }
