@@ -4,9 +4,14 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.stereotype.Service;
+
 import com.pranjal.SpringApplication.models.Post;
 import com.pranjal.SpringApplication.repositories.PostRepository;
+
 
 @Service
 public class PostService {
@@ -17,8 +22,13 @@ public class PostService {
         return postRepository.findById(id);
     }
 
-    public List<Post> getAll(){
+    public List<Post> findAll(){
         return postRepository.findAll();
+    }
+
+    
+    public Page<Post> findAll(int offset, int pageSize, String field){
+        return postRepository.findAll(PageRequest.of(offset, pageSize).withSort(Direction.ASC, field));
     }
     
     public void delete(Post post){
@@ -33,4 +43,3 @@ public class PostService {
     }
 
 }
-

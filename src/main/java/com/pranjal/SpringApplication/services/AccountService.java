@@ -20,7 +20,6 @@ import com.pranjal.SpringApplication.models.Account;
 import com.pranjal.SpringApplication.models.Authority;
 import com.pranjal.SpringApplication.repositories.AccountRepository;
 import com.pranjal.SpringApplication.util.constants.Roles;
-
 @Service
 public class AccountService implements UserDetailsService {
 
