@@ -101,7 +101,7 @@ public class SeedData implements CommandLineRunner{
             Post post01 = new Post();
             post01.setTitle("Simple and Delicious Pasta Recipe");
             post01.setBody("""
-               Ingredients:
+               <p>Ingredients:
 200g of your favorite pasta (spaghetti, penne, fusilli, etc.)
 2 tablespoons olive oil
 3 cloves garlic, minced
@@ -136,7 +136,7 @@ Garnish with fresh basil leaves for an extra touch of flavor and color.
 Tips:
 For a richer flavor, you can add a splash of red wine to the sauce while it simmers.
 Feel free to add in other ingredients like sautéed vegetables, cooked chicken, or shrimp to customize your pasta dish.
-Enjoy your delicious homemade pasta!   
+Enjoy your delicious homemade pasta!</p> 
             
             """);
             post01.setAccount(account01);
@@ -146,7 +146,7 @@ Enjoy your delicious homemade pasta!
             post02.setTitle("Quick and Easy Chai Tea Recipe");
             post02.setBody("""
                       
-             Ingredients:
+             <p>Ingredients:
 2 cups water
 1 cup milk (dairy or plant-based)
 2 black tea bags or 2 tablespoons loose black tea
@@ -178,7 +178,7 @@ Serve hot, optionally garnished with a sprinkle of ground nutmeg.
 Tips:
 For a spicier chai, increase the amount of ginger and black pepper.
 You can prepare a larger batch of the spice mix and store it in an airtight container for quick chai anytime.
-Enjoy your homemade chai tea! Perfect for warming up on a cozy day.
+Enjoy your homemade chai tea! Perfect for warming up on a cozy day.</p>
             
             """);
             
@@ -186,24 +186,42 @@ Enjoy your homemade chai tea! Perfect for warming up on a cozy day.
             postService.save(post02);
 
             Post post03 = new Post();
-            post03.setTitle("third post");
+            post03.setTitle("Beginner's Guide to Fresh Homemade Ravioli");
             post03.setBody("""
-               Git (/ɡɪt/)[8] is a distributed version control system: tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows (thousands of parallel branches running on different systems).[9][10][11]
-
-               Git was originally authored by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its initial development.[12] Since 2005, Junio Hamano has been the core maintainer. As with most other distributed version control systems, and unlike most client–server systems, every Git directory on every computer is a full-fledged repository with complete history and full version-tracking abilities, independent of network access or a central server.[13] Git is free and open-source software distributed under the GPL-2.0-only license.   
+                        
+            <h3><strong>Beginner's Guide to Fresh Homemade Ravioli</strong></h3>
+            <p><a href="https://www.theclevercarrot.com/wp-content/uploads/2022/09/Homemade-ravioli_.jpg/"><img src="https://www.theclevercarrot.com/wp-content/uploads/2022/10/homemade-ravioli.jpg" alt="Fresh Homemade Ravioli" width="220"></a></p><p>&nbsp;</p><p>Making fresh homemade ravioli is a delightful culinary adventure. With a few basic ingredients and some tips, you can create delicious ravioli from scratch.</p>
+            <p>Key steps include:</p>
+            <ul>
+                  <li><strong>Dough Preparation:</strong> Use a mix of flour, eggs, and water to form a smooth dough.</li>
+                  <li><strong>Filling:</strong> Combine ingredients like ricotta, Parmesan, and spinach for a classic filling.</li>
+                  <li><strong>Assembling:</strong> Roll out the dough, place the filling, and seal the edges carefully.</li>
+                  <li><strong>Cooking:</strong> Boil the ravioli until they float, then serve with your favorite sauce.</li>
+            </ul>
+            <p>For detailed instructions and tips, visit the full guide on <a href="https://www.theclevercarrot.com/2022/10/beginners-guide-to-fresh-homemade-ravioli/">The Clever Carrot</a>.</p>
             
             """);
             post03.setAccount(account01);
             postService.save(post03);
 
             Post post04 = new Post();
-            post04.setTitle("Fouth post");
+            post04.setTitle("Easy One-Pot Pasta");
             post04.setBody("""
-                      
-              <h3><strong>Model–view–controller framework</strong></h3>
-              <p><a href="https://en.wikipedia.org/wiki/File:Spring5JuergenHoeller2.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Spring5JuergenHoeller2.jpg/220px-Spring5JuergenHoeller2.jpg" alt="" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Spring5JuergenHoeller2.jpg/330px-Spring5JuergenHoeller2.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Spring5JuergenHoeller2.jpg/440px-Spring5JuergenHoeller2.jpg 2x" sizes="100vw" width="220"></a></p><p>&nbsp;</p><p>Spring MVC/Web Reactive presentation given by Jürgen Höller</p><p>The Spring Framework features its own <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">model–view–controller</a> (MVC) <a href="https://en.wikipedia.org/wiki/Web_application_framework">web application framework</a>, which was not originally planned. The Spring developers decided to write their own Web framework as a reaction to what they perceived as the poor design of the (then) popular <a href="https://en.wikipedia.org/wiki/Jakarta_Struts">Jakarta Struts</a> Web framework,<a href="https://en.wikipedia.org/wiki/Spring_Framework#cite_note-21">[21]</a> as well as deficiencies in other available frameworks. In particular, they felt there was insufficient separation between the presentation and request handling layers, and between the request handling layer and the model.<a href="https://en.wikipedia.org/wiki/Spring_Framework#cite_note-22">[22]</a></p><p>Like Struts, Spring MVC is a request-based framework. The framework defines <a href="https://en.wikipedia.org/wiki/Strategy_pattern">strategy</a> interfaces for all of the responsibilities that must be handled by a modern request-based framework. The goal of each interface is to be simple and clear so that it's easy for Spring MVC users to write their own implementations, if they so choose. MVC paves the way for cleaner front end code. All interfaces are tightly coupled to the <a href="https://en.wikipedia.org/wiki/Java_Servlet">Servlet API</a>. This tight coupling to the Servlet API is seen by some as a failure on the part of the Spring developers to offer a high-level abstraction for Web-based applications[<a href="https://en.wikipedia.org/wiki/Wikipedia:Citation_needed"><i>citation needed</i></a>]. However, this coupling makes sure that the features of the Servlet API remain available to developers while also offering a high abstraction framework to ease working with it.</p><p>The DispatcherServlet class is the <a href="https://en.wikipedia.org/wiki/Front_controller">front controller</a><a href="https://en.wikipedia.org/wiki/Spring_Framework#cite_note-23">[23]</a> of the framework and is responsible for delegating control to the various interfaces during the execution phases of an <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP request</a>.</p><p>The most important interfaces defined by Spring MVC, and their responsibilities, are listed below:</p><ul><li>Controller: comes between Model and View to manage incoming requests and redirect to proper response. Controller will map the http request to corresponding methods. It acts as a gate that directs the incoming information. It switches between going into model or view.</li><li>HandlerAdapter: execution of objects that handle incoming requests</li><li>HandlerInterceptor: interception of incoming requests comparable, but not equal to Servlet filters (use is optional and not controlled by DispatcherServlet).</li><li>HandlerMapping: selecting objects that handle incoming requests (handlers) based on any attribute or condition internal or external to those requests</li><li>LocaleResolver: resolving and optionally saving of the <a href="https://en.wikipedia.org/wiki/Locale_(computer_software)">locale</a> of an individual user</li><li>MultipartResolver: facilitate working with file uploads by wrapping incoming requests</li><li>View: responsible for returning a response to the client. Some requests may go straight to view without going to the model part; others may go through all three.</li><li>ViewResolver: selecting a View based on a logical name for the view (use is not strictly required)</li></ul><p>Each strategy interface above has an important responsibility in the overall framework. The abstractions offered by these interfaces are powerful, so to allow for a set of variations in their implementations, Spring MVC ships with implementations of all these interfaces and together offers a feature set on top of the Servlet API. However, developers and vendors are free to write other implementations. Spring MVC uses the Java java.util.Map interface as a data-oriented abstraction for the Model where keys are expected to be string values.</p><p>The ease of testing the implementations of these interfaces seems one important advantage of the high level of abstraction offered by Spring MVC. DispatcherServlet is tightly coupled to the Spring inversion of control container for configuring the web layers of applications. However, web applications can use other parts of the Spring Framework—including the container—and choose not to use Spring MVC.</p>
+                        
+            <h3><strong>Easy One-Pot Pasta</strong></h3>
+            <p><a href="https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-6-768x1152.jpg/"><img src="https://frommybowl.com/wp-content/uploads/2022/10/One-Pot-Pasta.jpg" alt="Easy One-Pot Pasta" width="220"></a></p><p>&nbsp;</p><p>This easy one-pot pasta recipe is perfect for a quick and delicious meal. With minimal ingredients and cleanup, it’s ideal for busy weeknights.</p>
+            <p>Key steps include:</p>
+            <ul>
+                  <li><strong>Sauté Aromatics:</strong> Begin by sautéing garlic and onion in olive oil until fragrant.</li>
+                  <li><strong>Add Vegetables:</strong> Incorporate vegetables like bell peppers and zucchini, cooking until they soften.</li>
+                  <li><strong>Combine Ingredients:</strong> Add pasta, canned tomatoes, vegetable broth, and seasonings to the pot.</li>
+                  <li><strong>Cook:</strong> Bring to a boil, then simmer until the pasta is tender and most of the liquid is absorbed.</li>
+                  <li><strong>Serve:</strong> Garnish with fresh basil or vegan parmesan, if desired.</li>
+            </ul>
+            <p>For detailed instructions and tips, visit the full recipe on <a href="https://frommybowl.com/easy-one-pot-pasta/">From My Bowl</a>.</p>
             
             """);
+         
             
             post04.setAccount(account02);
             postService.save(post04);
@@ -211,22 +229,54 @@ Enjoy your homemade chai tea! Perfect for warming up on a cozy day.
             Post post05 = new Post();
             post05.setTitle("Fifth post");
             post05.setBody("""
-               Git (/ɡɪt/)[8] is a distributed version control system: tracking changes in any set of files, usually used for coordinating work among programmers collaboratively developing source code during software development. Its goals include speed, data integrity, and support for distributed, non-linear workflows (thousands of parallel branches running on different systems).[9][10][11]
+               <h3><strong>Puran Poli Recipe</strong></h3>
+               <p><a href="https://1.bp.blogspot.com/_e_gbLKOQYxo/Sb2lreJRB4I/AAAAAAAAAIY/xWrdpq8YYfM/s400/poli.jpg"><img src="https://1.bp.blogspot.com/_e_gbLKOQYxo/Sb2lreJRB4I/AAAAAAAAAIY/xWrdpq8YYfM/s400/poli.jpg" alt="Puran Poli" srcset="https://1.bp.blogspot.com/_e_gbLKOQYxo/Sb2lreJRB4I/AAAAAAAAAIY/xWrdpq8YYfM/s600/poli.jpg 1.5x, https://1.bp.blogspot.com/_e_gbLKOQYxo/Sb2lreJRB4I/AAAAAAAAAIY/xWrdpq8YYfM/s800/poli.jpg 2x" sizes="100vw" width="220"></a></p>
+               <p>&nbsp;</p>
+               <p><strong>Ingredients:</strong></p>
+               <ul>
+               <li>Chana dal - 1 cup</li>
+               <li>Jaggery - 1 cup</li>
+               <li>Cardamom powder - 1/2 tsp</li>
+               <li>Nutmeg powder - a pinch</li>
+               <li>Wheat flour - 1 cup</li>
+               <li>All-purpose flour - 1/4 cup</li>
+               <li>Salt - a pinch</li>
+               <li>Oil - 2 tbsp</li>
+               </ul>
+               <p>&nbsp;</p>
+               <p><strong>Method:</strong></p>
+               <ol>
+               <li>Cook chana dal in a pressure cooker until soft. Drain the water.</li>
+               <li>In a pan, add cooked chana dal and jaggery. Cook until the mixture thickens.</li>
+               <li>Add cardamom powder and nutmeg powder. Mix well and let it cool.</li>
+               <li>In a bowl, mix wheat flour, all-purpose flour, salt, and oil. Add water to make a soft dough. Let it rest for 30 minutes.</li>
+               <li>Make small balls of the dough and puran mixture. Stuff the puran mixture in the dough balls and roll them into flat discs.</li>
+               <li>Cook on a hot griddle until golden brown on both sides. Serve hot with ghee.</li>
+               </ol>
+               <p>&nbsp;</p>
+               <p>Enjoy the delicious <strong>Puran Poli</strong> during festive occasions or as a sweet treat anytime!</p>
 
-               Git was originally authored by Linus Torvalds in 2005 for development of the Linux kernel, with other kernel developers contributing to its initial development.[12] Since 2005, Junio Hamano has been the core maintainer. As with most other distributed version control systems, and unlike most client–server systems, every Git directory on every computer is a full-fledged repository with complete history and full version-tracking abilities, independent of network access or a central server.[13] Git is free and open-source software distributed under the GPL-2.0-only license.   
-            
             """);
             post05.setAccount(account01);
             postService.save(post05);
 
             Post post06 = new Post();
-            post06.setTitle("Sixth post");
+            post06.setTitle("Homemade Croissants");
             post06.setBody("""
-                      
-              <h3><strong>Model–view–controller framework</strong></h3>
-              <p><a href="https://en.wikipedia.org/wiki/File:Spring5JuergenHoeller2.jpg"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Spring5JuergenHoeller2.jpg/220px-Spring5JuergenHoeller2.jpg" alt="" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Spring5JuergenHoeller2.jpg/330px-Spring5JuergenHoeller2.jpg 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Spring5JuergenHoeller2.jpg/440px-Spring5JuergenHoeller2.jpg 2x" sizes="100vw" width="220"></a></p><p>&nbsp;</p><p>Spring MVC/Web Reactive presentation given by Jürgen Höller</p><p>The Spring Framework features its own <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller">model–view–controller</a> (MVC) <a href="https://en.wikipedia.org/wiki/Web_application_framework">web application framework</a>, which was not originally planned. The Spring developers decided to write their own Web framework as a reaction to what they perceived as the poor design of the (then) popular <a href="https://en.wikipedia.org/wiki/Jakarta_Struts">Jakarta Struts</a> Web framework,<a href="https://en.wikipedia.org/wiki/Spring_Framework#cite_note-21">[21]</a> as well as deficiencies in other available frameworks. In particular, they felt there was insufficient separation between the presentation and request handling layers, and between the request handling layer and the model.<a href="https://en.wikipedia.org/wiki/Spring_Framework#cite_note-22">[22]</a></p><p>Like Struts, Spring MVC is a request-based framework. The framework defines <a href="https://en.wikipedia.org/wiki/Strategy_pattern">strategy</a> interfaces for all of the responsibilities that must be handled by a modern request-based framework. The goal of each interface is to be simple and clear so that it's easy for Spring MVC users to write their own implementations, if they so choose. MVC paves the way for cleaner front end code. All interfaces are tightly coupled to the <a href="https://en.wikipedia.org/wiki/Java_Servlet">Servlet API</a>. This tight coupling to the Servlet API is seen by some as a failure on the part of the Spring developers to offer a high-level abstraction for Web-based applications[<a href="https://en.wikipedia.org/wiki/Wikipedia:Citation_needed"><i>citation needed</i></a>]. However, this coupling makes sure that the features of the Servlet API remain available to developers while also offering a high abstraction framework to ease working with it.</p><p>The DispatcherServlet class is the <a href="https://en.wikipedia.org/wiki/Front_controller">front controller</a><a href="https://en.wikipedia.org/wiki/Spring_Framework#cite_note-23">[23]</a> of the framework and is responsible for delegating control to the various interfaces during the execution phases of an <a href="https://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol">HTTP request</a>.</p><p>The most important interfaces defined by Spring MVC, and their responsibilities, are listed below:</p><ul><li>Controller: comes between Model and View to manage incoming requests and redirect to proper response. Controller will map the http request to corresponding methods. It acts as a gate that directs the incoming information. It switches between going into model or view.</li><li>HandlerAdapter: execution of objects that handle incoming requests</li><li>HandlerInterceptor: interception of incoming requests comparable, but not equal to Servlet filters (use is optional and not controlled by DispatcherServlet).</li><li>HandlerMapping: selecting objects that handle incoming requests (handlers) based on any attribute or condition internal or external to those requests</li><li>LocaleResolver: resolving and optionally saving of the <a href="https://en.wikipedia.org/wiki/Locale_(computer_software)">locale</a> of an individual user</li><li>MultipartResolver: facilitate working with file uploads by wrapping incoming requests</li><li>View: responsible for returning a response to the client. Some requests may go straight to view without going to the model part; others may go through all three.</li><li>ViewResolver: selecting a View based on a logical name for the view (use is not strictly required)</li></ul><p>Each strategy interface above has an important responsibility in the overall framework. The abstractions offered by these interfaces are powerful, so to allow for a set of variations in their implementations, Spring MVC ships with implementations of all these interfaces and together offers a feature set on top of the Servlet API. However, developers and vendors are free to write other implementations. Spring MVC uses the Java java.util.Map interface as a data-oriented abstraction for the Model where keys are expected to be string values.</p><p>The ease of testing the implementations of these interfaces seems one important advantage of the high level of abstraction offered by Spring MVC. DispatcherServlet is tightly coupled to the Spring inversion of control container for configuring the web layers of applications. However, web applications can use other parts of the Spring Framework—including the container—and choose not to use Spring MVC.</p>
+                        
+            <h3><strong>Homemade Croissants</strong></h3>
+            <p><a href="https://sallysbakingaddiction.com/homemade-croissants/"><img src="https://cdn.sallysbakingaddiction.com/wp-content/uploads/2018/07/homemade-croissants.jpg" alt="Homemade Croissants" width="220"></a></p><p>&nbsp;</p><p>Baking homemade croissants is a rewarding process that results in delicious, flaky pastries. Here are the key steps:</p>
+            <ul>
+                  <li><strong>Preparing the Dough:</strong> Mix flour, sugar, salt, yeast, and milk to form the dough.</li>
+                  <li><strong>Layering Butter:</strong> Roll out the dough, layer with butter, and fold multiple times to create flaky layers.</li>
+                  <li><strong>Shaping:</strong> Cut the dough into triangles and roll them into crescent shapes.</li>
+                  <li><strong>Proofing:</strong> Let the shaped croissants rise until puffy.</li>
+                  <li><strong>Baking:</strong> Bake until golden brown and enjoy warm.</li>
+            </ul>
+            <p>For detailed instructions and tips, visit the full recipe on <a href="https://sallysbakingaddiction.com/homemade-croissants/">Sally's Baking Addiction</a>.</p>
             
             """);
+   
             
             post06.setAccount(account02);
             postService.save(post06);
