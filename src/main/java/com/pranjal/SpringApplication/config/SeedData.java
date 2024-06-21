@@ -99,45 +99,9 @@ public class SeedData implements CommandLineRunner{
        List<Post> posts = postService.findAll();
        if (posts.isEmpty()){
             Post post01 = new Post();
-            post01.setTitle("Simple and Delicious Pasta Recipe");
+            post01.setTitle("How To Make Chai Tea");
             post01.setBody("""
-               <p>Ingredients:
-200g of your favorite pasta (spaghetti, penne, fusilli, etc.)
-2 tablespoons olive oil
-3 cloves garlic, minced
-1 can (400g) diced tomatoes
-1 teaspoon dried oregano
-1 teaspoon dried basil
-Salt and pepper to taste
-Freshly grated Parmesan cheese (optional)
-Fresh basil leaves for garnish (optional)
-Instructions:
-Boil the Pasta:
-
-Fill a large pot with water, add a pinch of salt, and bring it to a boil.
-Add the pasta and cook according to the package instructions until al dente (firm to the bite).
-Drain the pasta and set aside.
-Prepare the Sauce:
-
-In a large skillet, heat the olive oil over medium heat.
-Add the minced garlic and sauté for about 1 minute until fragrant, but not browned.
-Add the diced tomatoes (with their juice) to the skillet.
-Stir in the dried oregano, dried basil, salt, and pepper.
-Let the sauce simmer for about 10-15 minutes, stirring occasionally, until it thickens slightly.
-Combine Pasta and Sauce:
-
-Add the cooked pasta to the skillet with the sauce.
-Toss everything together until the pasta is well coated with the sauce.
-Adjust seasoning with salt and pepper, if needed.
-Serve:
-
-Serve the pasta hot, topped with freshly grated Parmesan cheese if desired.
-Garnish with fresh basil leaves for an extra touch of flavor and color.
-Tips:
-For a richer flavor, you can add a splash of red wine to the sauce while it simmers.
-Feel free to add in other ingredients like sautéed vegetables, cooked chicken, or shrimp to customize your pasta dish.
-Enjoy your delicious homemade pasta!</p> 
-            
+               	<p>A truly <strong>authentic Indian Chai tea recipe</strong>, as made for me by my lovely Indian mother-in-law. Tea the Indian way is rich and milky, deeply coloured, steaming hot, flavourful and sweet. You’ll love this homemade masala chai from scratch with warming spices like whole cinnamon.</p><p><img src="https://foodess.com/wp-content/uploads/2016/11/authentic-chai-tea-recipe-1.jpg"  style="width: 200px; height: auto; alt="homemade chai tea in a pot with indian spices" srcset="https://foodess.com/wp-content/uploads/2016/11/authentic-chai-tea-recipe-1.jpg 790w, https://foodess.com/wp-content/uploads/2016/11/authentic-chai-tea-recipe-1-240x300.jpg 240w, https://foodess.com/wp-content/uploads/2016/11/authentic-chai-tea-recipe-1-768x960.jpg 768w, https://foodess.com/wp-content/uploads/2016/11/authentic-chai-tea-recipe-1-300x375.jpg 300w, https://foodess.com/wp-content/uploads/2016/11/authentic-chai-tea-recipe-1-220x275.jpg 220w, https://foodess.com/wp-content/uploads/2016/11/authentic-chai-tea-recipe-1-539x673.jpg 539w, https://foodess.com/wp-content/uploads/2016/11/authentic-chai-tea-recipe-1-182x228.jpg 182w" sizes="100vw" width="790"></p><h2>What is Chai Tea Made of?</h2><p>What I love so much about it is that the tea is actually brewed in milk and water in a saucepan on the stove.</p><p>Because of this, it stays piping hot until ready to be drunk, rather than cooling down as it steeps in a teapot.</p><p>Authentic chai tea made from:</p><ul><li>Water</li><li>Milk (in a ratio of roughly one part milk to two parts water</li><li>Lots of tea leaves or tea bags for strong infusion</li><li>Plenty of sugar</li><li>Optional addition of spices</li></ul><h2>How to Make Chai Tea at Home</h2><p>Despite <strong>what Starbucks would have you believe</strong> with their chai tea lattes, the <strong>real homemade cha</strong>i tea recipe doesn’t start with a syrup and it’s not super heavily spiced. &nbsp;</p><p>A “recipe” is not really necessary; it’s really <i>the method</i> that matters.</p><p>The most important key for flavour is to make really <strong>good strong tea</strong> without letting it get bitter from oversteeping.</p><p><img src="https://foodess.com/wp-content/uploads/2022/10/authentic-indian-chai-3-683x1024.jpg" style="width: 200px; height: auto; alt="adding the black tea to the milk mixture" srcset="https://foodess.com/wp-content/uploads/2022/10/authentic-indian-chai-3-683x1024.jpg 683w, https://foodess.com/wp-content/uploads/2022/10/authentic-indian-chai-3-200x300.jpg 200w, https://foodess.com/wp-content/uploads/2022/10/authentic-indian-chai-3-768x1152.jpg 768w, https://foodess.com/wp-content/uploads/2022/10/authentic-indian-chai-3-1024x1536.jpg 1024w, https://foodess.com/wp-content/uploads/2022/10/authentic-indian-chai-3-152x228.jpg 152w" sizes="100vw" width="683"></p><p><strong>Here’s how to make really good cup of chai:</strong></p><ol><li>Bring <strong>water, milk and spices</strong> to a simmer in a small saucepan on the stove (adding the spices from the start gives them plenty of time to infuse).</li><li>Reduce heat and add in <strong>black tea</strong> to brew.</li><li>Wait for tea to <strong>steep</strong> (don’t boil it at this point or the tea releases too many tannins – those bitter compounds that make your mouth feel dry).</li><li><strong>Strain</strong> the warm spiced mixture into a mug; this will hold back the whole spices and tea leaves.</li><li>Stir <strong>sugar</strong> into your chai and sweeten to taste.</li></ol><p>Scale the recipe measurements below to the number of servings you need.</p>
             """);
             post01.setAccount(account01);
             postService.save(post01);
