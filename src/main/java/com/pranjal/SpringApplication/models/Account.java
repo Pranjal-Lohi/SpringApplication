@@ -82,6 +82,5 @@ public class Account {
                 + ", lastname=" + lastname + ", role=" + role + ", posts=" + posts + ", authorities=" + authorities
                 + "]";
     }
-
     
 }

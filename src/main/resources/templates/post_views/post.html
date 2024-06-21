@@ -54,6 +54,40 @@
       </div>
     </div>
   </section>
+<!-- comment section -->
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="mb-3">Comments</h3>
+      <ul id="comment-list" class="list-group">
+        <!-- comment list will be populated here -->
+      </ul>
+      <form id="comment-form" class="form-group mt-3">
+        <textarea id="comment-input" class="form-control" rows="3" placeholder="Add a comment..."></textarea>
+        <hr>
+        <button id="comment-submit" class="btn btn-primary">Post Comment</button>
+      </form>
+    </div>
+  </div>
+</div>
+<script>
+  $(document).ready(function() {
+    $('#comment-form').on('submit', function(event) {
+      event.preventDefault();
+      var commentText = $('#comment-input').val();
+      $.ajax({
+        type: 'POST',
+        url: '/comments', // adjust this URL to your server-side endpoint
+        data: { comment: commentText },
+        success: function(data) {
+          var commentHtml = '<li class="list-group-item">' + data.comment + '</li>';
+          $('#comment-list').append(commentHtml);
+          $('#comment-input').val(''); // reset the input field
+        }
+      });
+    });
+  });
+</script>
   <footer th:replace="~{/fragments/footer :: footer}">
 </body>
 

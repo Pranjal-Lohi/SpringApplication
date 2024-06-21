@@ -189,7 +189,7 @@ public class AccountController {
             account.setPassword_reset_token_expiry(LocalDateTime.now().plusMinutes(password_token_timeout));
             accountService.save(account);
             String reset_message = "This is the reset password link: "+site_domain+"change-password?token="+reset_token;
-            EmailDetails emailDetails = new EmailDetails(account.getEmail(), reset_message, "Reset password StudyEasy demo");
+            EmailDetails emailDetails = new EmailDetails(account.getEmail(), reset_message, "Reset password Foodistaan demo");
             if(emailService.sendSimpleEmail(emailDetails) == false){
                 attributes.addFlashAttribute("error", "Error while sending email, contact admin");
                 return "redirect:/forgot-password";
@@ -237,5 +237,4 @@ public class AccountController {
         return  "redirect:/login";
         
     }
-
 }

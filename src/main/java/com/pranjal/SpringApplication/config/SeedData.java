@@ -56,14 +56,14 @@ public class SeedData implements CommandLineRunner{
 
 
 
-       account02.setEmail("admin@admin.com");
+       account02.setEmail("pranjallohi123@gmail.com");
        account02.setPassword("pass987");
        account02.setFirstname("Admin");
        account02.setLastname("lastname");
        account02.setRole(Roles.ADMIN.getRole());
        account02.setAge(25);
        account02.setDate_of_birth(LocalDate.parse("1990-01-01"));
-       account02.setGender("Famale");
+       account02.setGender("Female");
 
        account03.setEmail("editor@editor.com");
        account03.setPassword("pass987");
@@ -143,42 +143,10 @@ Enjoy your delicious homemade pasta!</p>
             postService.save(post01);
 
             Post post02 = new Post();
-            post02.setTitle("Quick and Easy Chai Tea Recipe");
+            post02.setTitle("Easy One-Pot Pasta");
             post02.setBody("""
                       
-             <p>Ingredients:
-2 cups water
-1 cup milk (dairy or plant-based)
-2 black tea bags or 2 tablespoons loose black tea
-2-3 tablespoons sugar or honey (adjust to taste)
-1 cinnamon stick
-4 whole cloves
-2 cardamom pods, crushed
-1-2 slices fresh ginger
-1/2 teaspoon black peppercorns
-1/2 teaspoon ground nutmeg (optional)
-Instructions:
-Boil the Spices:
-
-In a medium saucepan, combine water, cinnamon stick, cloves, crushed cardamom pods, ginger, and black peppercorns.
-Bring to a boil over medium heat, then reduce to a simmer. Let the spices simmer for about 5 minutes.
-Brew the Tea:
-
-Add the black tea (tea bags or loose tea) to the saucepan.
-Simmer for another 3-5 minutes, depending on how strong you like your tea.
-Add Milk and Sweetener:
-
-Stir in the milk and sugar or honey.
-Increase the heat slightly and bring the mixture to a gentle boil.
-Simmer for 2-3 more minutes until the tea is well blended and hot.
-Strain and Serve:
-
-Strain the chai tea into cups using a fine mesh strainer.
-Serve hot, optionally garnished with a sprinkle of ground nutmeg.
-Tips:
-For a spicier chai, increase the amount of ginger and black pepper.
-You can prepare a larger batch of the spice mix and store it in an airtight container for quick chai anytime.
-Enjoy your homemade chai tea! Perfect for warming up on a cozy day.</p>
+             <p><i>This Easy One-Pot Pasta is the perfect weeknight dinner – uncooked pasta, veggies, and sauce combine and cook together in one pot in only 20 minutes!</i></p><p>One-Pot Pasta. Also known as the&nbsp;<strong>ultimate cozy weeknight dinner&nbsp;</strong>because it’s quick, easy,&nbsp;<i>satisfying</i>, and easy to pack with veggies. Plus, cleanup is a breeze 😉 Let’s get into it…</p><p><img src="https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-6.jpg" style="width: 150px; height: auto; alt="close up photo of cooked one pot pasta with wooden spoon" srcset="https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-6.jpg 1200w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-6-200x300.jpg 200w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-6-768x1152.jpg 768w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-6-683x1024.jpg 683w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-6-1170x1755.jpg 1170w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-6-585x878.jpg 585w" sizes="100vw" width="4000"></p><p>&nbsp;</p><h3><strong>INGREDIENTS FOR ONE-POT PASTA</strong></h3><p>This <strong>20-minute meal</strong> comes together with only a few key (and affordable!) ingredients:</p><ul><li><strong>Dry Pasta</strong> (yes, <i>un</i>cooked)</li><li><strong>Pasta Sauce&nbsp;</strong></li><li><strong>Water&nbsp;</strong></li><li><strong>Onion &amp; Garlic</strong></li><li><i><strong>Veggies!&nbsp;</strong></i></li></ul><p>I decided to use a combination of tomatoes, mushrooms, zucchini, and spinach for my pasta, but you can really use whatever you have on hand! Take some away, add extra ones in – you do you, boo.</p><p><img src="https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-1.jpg" style="width: 150px; height: auto; alt="ingredients for one pot pasta arranged in cooking pan before cooking on marble background" srcset="https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-1.jpg 1200w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-1-200x300.jpg 200w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-1-768x1152.jpg 768w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-1-683x1024.jpg 683w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-1-1170x1755.jpg 1170w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-1-585x878.jpg 585w" sizes="100vw" width="3693"></p><h3><strong>HOW TO MAKE ONE-POT PASTA</strong></h3><p>The <i>secret to success</i> in one pot pasta is cooking the dry pasta with&nbsp;<i>just the right amount of water</i> in order for the noodles to cook completely – without leaving any extra liquid behind. Luckily I’ve done all the work for you, and all you need to do is follow the (very, very easy) recipe!</p><ol><li>Pour the <strong>pasta</strong> on the bottom of the pot or pan</li><li><strong>Add</strong> the remaining ingredients</li><li>Bring the mixture to a boil, then <strong>simmer</strong> until the pasta is al-dente</li><li>Serve and <strong>enjoy</strong>!</li></ol><p><img src="https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-3.jpg" style="width: 150px; height: auto; alt="pan of cooked one pot pasta with red sauce on marble background" srcset="https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-3.jpg 1200w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-3-200x300.jpg 200w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-3-768x1152.jpg 768w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-3-683x1024.jpg 683w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-3-1170x1755.jpg 1170w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-3-585x877.jpg 585w" sizes="100vw" width="3773"></p><h3><strong>THE BEST NOODLES FOR ONE-POT PASTA</strong></h3><p>This One Pot Pasta can be made with both gluten-free and gluten-<i>full</i> noodles, but I would recommend&nbsp;<strong>using shorter shapes over longer ones, like spaghetti</strong>. Longer noodles are harder to stir and tend to stick together more while they cook. Shorter noodles can be stirred immediately (which is important) and and often as needed – no need to wait until they soften.</p><p><i>If you do opt for gluten-free</i> noodles, I have found that brown rice pasta seems to work the best, followed by other corn + grain blends. Bean and lentil-based pastas fall apart in one pot recipes&nbsp;<i>and</i> release more starch, which leads to a gummier final product.</p><p><img src="https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-7.jpg" style="width: 150px; height: auto; alt="bowl of cooked one pot pasta next to pan of pasta on marble background" srcset="https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-7.jpg 1200w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-7-200x300.jpg 200w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-7-768x1152.jpg 768w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-7-683x1024.jpg 683w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-7-1170x1755.jpg 1170w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl-7-585x878.jpg 585w" sizes="100vw" width="4000"></p><p>I LOVE this One-Pot Pasta recipe because it’s&nbsp;<strong>fuss-free</strong>, <strong>easy</strong>, and <strong>downright delicious</strong>!&nbsp; I personally think that one-pot noodles&nbsp;<i>taste better too</i>. Because they’re simmering in our actual sauce (and with our veggies) instead of just pasta water, they have at least double the flavor! I also like how the pasta releases a little starch as it cooks, which helps to make our sauce nice, thick, and creamy.</p><p><strong>If you’re looking for more one-pot pasta recipes, </strong>you’ll also love this&nbsp;<a href="https://frommybowl.com/one-pot-mushroom-stroganoff/"><strong>One Pot Vegan Mushroom Stroganoff</strong></a>, this&nbsp;<a href="https://frommybowl.com/one-pot-pumpkin-pasta/"><strong>One Pot Pumpkin Pasta</strong></a>, and this&nbsp;<a href="https://frommybowl.com/one-pot-spinach-artichoke-pasta/"><strong>One Pot Spinach &amp; Artichoke Pasta</strong></a><strong>!&nbsp;</strong></p><p><img src="https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl_Pinterest.png" style="width: 150px; height: auto; alt="This Easy One-Pot Pasta is the perfect weeknight dinner - uncooked pasta, veggies, and sauce combine and cook together in one pot in only 20 minutes! #onepot #pasta #vegan #vegandinner #plantbased | frommybowl.com" srcset="https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl_Pinterest.png 735w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl_Pinterest-200x300.png 200w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl_Pinterest-683x1024.png 683w, https://frommybowl.com/wp-content/uploads/2020/01/One_Pot_Pasta_Vegetables_Vegan_FromMyBowl_Pinterest-585x877.png 585w" sizes="100vw" width="735"></p>
             
             """);
             

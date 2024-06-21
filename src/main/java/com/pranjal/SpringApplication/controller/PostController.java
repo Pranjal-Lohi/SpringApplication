@@ -1,6 +1,7 @@
 package com.pranjal.SpringApplication.controller;
 
 import java.security.Principal;
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,10 +13,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.pranjal.SpringApplication.models.Account;
+import com.pranjal.SpringApplication.models.ApplicationUser;
+import com.pranjal.SpringApplication.models.Comment;
 import com.pranjal.SpringApplication.models.Post;
+import com.pranjal.SpringApplication.repositories.CommentRepo;
+import com.pranjal.SpringApplication.repositories.PostRepository;
+import com.pranjal.SpringApplication.repositories.UserRepository;
 import com.pranjal.SpringApplication.services.AccountService;
+import com.pranjal.SpringApplication.services.CommentService;
 import com.pranjal.SpringApplication.services.PostService;
 
 import jakarta.validation.Valid;
@@ -29,6 +37,18 @@ public class PostController {
     @Autowired
     private AccountService accountService;
 
+    @Autowired
+    private CommentService commentService;
+
+    @Autowired
+    private PostRepository postRepository;
+    
+    @Autowired
+    private CommentRepo commentRepo;
+
+    @Autowired
+    private UserRepository userRepository;
+    
 
     @GetMapping("/posts/{id}")
     public String getPost(@PathVariable Long id, Model model, Principal principal) {
@@ -55,6 +75,7 @@ public class PostController {
             return "404";
         }
     }
+
 
     @GetMapping("/posts/add")
     @PreAuthorize("isAuthenticated()")
@@ -136,5 +157,22 @@ public class PostController {
         }
 
     }
+
+    @PostMapping("/posts/{postId}/comments")
+    public String addComment(@PathVariable Long postId, @RequestBody Comment comment, Principal principal) {
+        Post post = postRepository.findById(postId).orElseThrow();
+        ApplicationUser user = userRepository.findByEmail(principal.getName());
+        comment.setPost(post);
+        comment.setUser(user);
+        commentService.addComment(post, user, comment.getText());
+        return "redirect:/posts/" + postId;
 }
 
+    @GetMapping("/posts")
+    public String getAllPosts(Model model) {
+        List<Post> posts = postRepository.findAll();
+        model.addAttribute("posts", posts);
+        return "posts";
+    }
+    
+}
