@@ -1,1 +1,1 @@
-Community Recipe Sharing Application using Spring Boot
+**Community Recipe Sharing Application using Spring Boot**
